@@ -15,8 +15,6 @@ class NoteController extends Controller
     {
         $datas = Note::query()
                     ->latest()
-                    // ->get()
-                    // ->dd();
                     ->paginate(10);
 
         return view('note.index', compact('datas'));
@@ -35,7 +33,6 @@ class NoteController extends Controller
      */
     public function store(StoreNoteRequest $request)
     {
-        // dd($request);
         $validate = $request->validated();
         Note::create($validate);
         return to_route('note.index');
