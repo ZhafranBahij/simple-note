@@ -89,7 +89,7 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            {{ $slot }}
         </main>
     </div>
 
